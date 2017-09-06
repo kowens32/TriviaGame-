@@ -54,12 +54,33 @@ const quizQuestions = [
         question: "Which U.S. President loved bowling so much that he put a bowling alley in the White House?",
     answers: {
             a: "Richard Nixon",
-            b:
-    }
+            b: "Herbert Hoover",
+            c: "Calvin Coolidge",
+    },
 
-    }
+        correctAnswers: "a",
+    },
+    {
+        question: "Which U.S. President is the only President to never be elected by the voting public?",
+        answers: {
+            a: "Richard Nixon",
+            b: "Gerald R. Ford",
+            c: "Jimmy Carter",
+        },
 
+        correctAnswers: "b",
+    },
 
+    {
+        question: "Which U.S. President was terrified of the number 13?",
+        answers: {
+            a: "Franklin Delano Roosevelt",
+            b: "Harry S. Truman",
+            c: "Dwight D. Eisenhower",
+        },
+
+        correctAnswers: "a",
+    },
     ]
 
 
