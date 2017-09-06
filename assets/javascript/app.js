@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 
 
-/*
+
 const quizQuestions = [
     {
         question: "Which U.S. President invented the swivel chair?",
@@ -49,5 +49,18 @@ const quizQuestions = [
             c: "Thomas Jefferson",
         }
     correctAnswer: "c"
+    },
+    {
+        question: "Which U.S. President loved bowling so much that he put a bowling alley in the White House?",
+    answers: {
+            a: "Richard Nixon",
+            b:
     }
-]*/
+
+    }
+
+
+    ]
+
+
+
