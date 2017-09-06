@@ -32,56 +32,92 @@ $(document).ready(function(){
 
 
 
+function buildQiuz(){
+    //store the HTML output
+    const output = [];
 
+    //for each question
+    myQuestions.forEach(
+        (currentQuestion, questionNumber) => {
+            //store the list of answer choices
+        const answers = [];
 
+        //and for each available answer...
+        for(letter in currentQuestion.answers){
 
-
-
-
-
-
-const quizQuestions = [
-    {
-        question: "Which U.S. President invented the swivel chair?",
-        answers: {
-            a: "John Quincy Adams",
-            b: "Abraham Lincoln",
-            c: "Thomas Jefferson",
+            // ...add an HTML radio button
+            answers.push(
+                <label>
+                <input type="radio" name="question${questionNumber}" value="${letter}">
+                ${letter} :
+            ${currentQuestion.answers[letter]}
+            </label>
+            );
         }
-    correctAnswer: "c"
-    },
-    {
-        question: "Which U.S. President loved bowling so much that he put a bowling alley in the White House?",
-    answers: {
-            a: "Richard Nixon",
-            b: "Herbert Hoover",
-            c: "Calvin Coolidge",
-    },
 
-        correctAnswers: "a",
-    },
-    {
-        question: "Which U.S. President is the only President to never be elected by the voting public?",
-        answers: {
-            a: "Richard Nixon",
-            b: "Gerald R. Ford",
-            c: "Jimmy Carter",
-        },
+        //add this question and its answer to the output
+    output.push(
+        '<div class="question"> ${currentQuestion.question}
+    </div>
+    <div class="answers"> ${answers.join('')}</div>'
+    );
+    }
+    );
 
-        correctAnswers: "b",
-    },
+    //combines the output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
 
-    {
-        question: "Which U.S. President was terrified of the number 13?",
-        answers: {
-            a: "Franklin Delano Roosevelt",
-            b: "Harry S. Truman",
-            c: "Dwight D. Eisenhower",
-        },
 
-        correctAnswers: "a",
-    },
-    ]
+}
 
 
 
+//
+//
+//
+//
+// const quizQuestions = [
+//     {
+//         question: "Which U.S. President invented the swivel chair?",
+//         answers: {
+//             a: "John Quincy Adams",
+//             b: "Abraham Lincoln",
+//             c: "Thomas Jefferson",
+//         }
+//     correctAnswer: "c"
+//     },
+//     {
+//         question: "Which U.S. President loved bowling so much that he put a bowling alley in the White House?",
+//     answers: {
+//             a: "Richard Nixon",
+//             b: "Herbert Hoover",
+//             c: "Calvin Coolidge",
+//     },
+//
+//         correctAnswers: "a",
+//     },
+//     {
+//         question: "Which U.S. President is the only President to never be elected by the voting public?",
+//         answers: {
+//             a: "Richard Nixon",
+//             b: "Gerald R. Ford",
+//             c: "Jimmy Carter",
+//         },
+//
+//         correctAnswers: "b",
+//     },
+//
+//     {
+//         question: "Which U.S. President was terrified of the number 13?",
+//         answers: {
+//             a: "Franklin Delano Roosevelt",
+//             b: "Harry S. Truman",
+//             c: "Dwight D. Eisenhower",
+//         },
+//
+//         correctAnswers: "a",
+//     },
+//     ];
+//
+//
+//
