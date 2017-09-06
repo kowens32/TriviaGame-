@@ -9,15 +9,15 @@ $(document).ready(function(){
     function decrement () {
         number--;
         $("#question-timer").html("<h2>" + number + "</h2>");
-    }
+
 //If number hits zero
-    if (number === 0){
-        alert("Time up!");
-        //show correct answer
-        //Keep track of incorrect answers
+        if (number === 0) {
+            alert("Time up!");
+            //show correct answer
+            //Keep track of incorrect answers
 
+        }
     }
-
 //If user selects correct answer, alert "correct!"
 //Keep track of correct answers
 //Move on to next question without user input by using a timer
