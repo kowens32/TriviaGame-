@@ -2,6 +2,8 @@
 //Need to create a timer that counts down from 30 seconds
 var number = 31;
 var intervalId;
+var correctAnswers = 0;
+var incorrectAnswers = 0;
 $(document).ready(function(){
 
     intervalId = setInterval(decrement, 1000);
@@ -18,10 +20,13 @@ $(document).ready(function(){
 
         }
     }
-//If user selects correct answer, alert "correct!"
+
+//Each question has to be written to the DOM
+    //The answer to each question has to be pushed converted to a button by using a for loop
+//If user selects correct answer, write "correct!" to the DOM and show correct answer
 //Keep track of correct answers
 //Move on to next question without user input by using a timer
-//If user selects incorrect answer, alert "incorrect!" with correct answer
+//If user selects incorrect answer, write "incorrect!" to the DOM and show correct answer
 //Keep track of incorrect answers
 //Move on to next question without user input by using a timer
 //Reset to new game
@@ -32,43 +37,7 @@ $(document).ready(function(){
 
 
 
-function buildQiuz(){
-    //store the HTML output
-    const output = [];
 
-    //for each question
-    myQuestions.forEach(
-        (currentQuestion, questionNumber) => {
-            //store the list of answer choices
-        const answers = [];
-
-        //and for each available answer...
-        for(letter in currentQuestion.answers){
-
-            // ...add an HTML radio button
-            answers.push(
-                <label>
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-                ${letter} :
-            ${currentQuestion.answers[letter]}
-            </label>
-            );
-        }
-
-        //add this question and its answer to the output
-    output.push(
-        '<div class="question"> ${currentQuestion.question}
-    </div>
-    <div class="answers"> ${answers.join('')}</div>'
-    );
-    }
-    );
-
-    //combines the output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
-
-
-}
 
 
 
