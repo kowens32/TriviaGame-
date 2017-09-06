@@ -1,5 +1,13 @@
 
 //Need to create a timer that counts down from 30 seconds
+var number = 30;
+var intervalId;
+$(document).ready(function(){
+
+    intervalId = setInterval(decrement, 1000);
+
+
+});
 //If user selects correct answer, alert "correct!"
 //Keep track of correct answers
 //Move on to next question without user input by using a timer
