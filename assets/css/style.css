@@ -1,4 +1,6 @@
-#question-timer {
+#question-timer,
+.answers-box,
+.question-box {
     border: solid pink;
 }
 
