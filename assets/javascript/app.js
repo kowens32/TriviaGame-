@@ -46,6 +46,19 @@ $(document).ready(function(){
 
     startGame();
 
+    function userSelection () {
+        var userGuess;
+        $("button").on("click", function() {
+            var userGuess = $(this).attr('data-answers');
+            console.log("what is "+userGuess);
+        });
+
+
+    }
+   userSelection();
+
+
+
 
 
 
