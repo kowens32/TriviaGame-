@@ -32,18 +32,22 @@ $(document).ready(function(){
     function displayAnswers(answers) {
         for(var i = 0; i < answers.length; i++) {
             var b = $('<button>');
+            b.attr('data-answers', answers[i]);
             b.text(answers[i])
             b.appendTo('.answers-box')
         }
     }
 
     function startGame() {
-        var currentQuestion = 0;
+        var currentQuestion = 2;
         displayQuestion(quizQuestions[currentQuestion].question, currentQuestion);
         displayAnswers(quizQuestions[currentQuestion].answers);
     }
 
     startGame();
+
+
+
 
 //If user selects correct answer, write "correct!" to the DOM and show correct answer
 //Keep track of correct answers
@@ -57,15 +61,6 @@ $(document).ready(function(){
 
 });
 
-var questionNumber = $(this).attr('data-question');
-var currentQuestion = quizQuestions[questionNumber];
-var correctAnswerIndex = currentQuestion[correctAnswer]
-var answer = currentQuestion.answers[correctAnswerIndex]
-
-
-
-
-
 
 var quizQuestions = [
     {
@@ -75,35 +70,28 @@ var quizQuestions = [
     },
     {
         question: "Which U.S. President loved bowling so much that he put a bowling alley in the White House?",
-        answers: {
-                a: "Richard Nixon",
-                b: "Herbert Hoover",
-                c: "Calvin Coolidge",
-        },
-        correctAnswers: "a",
+        answers: ["Richard Nixon", "Herbert Hoover", "Calvin Coolidge"],
+        correctAnswers: 0
     },
     {
         question: "Which U.S. President is the only President to never be elected by the voting public?",
-        answers: {
-            a: "Richard Nixon",
-            b: "Gerald R. Ford",
-            c: "Jimmy Carter",
-        },
-
-        correctAnswers: "b",
+        answers: ["Richard Nixon", "Gerald R. Ford", "Jimmy Carter"],
+        correctAnswers: 1
     },
 
     {
         question: "Which U.S. President was terrified of the number 13?",
-        answers: {
-            a: "Franklin Delano Roosevelt",
-            b: "Harry S. Truman",
-            c: "Dwight D. Eisenhower",
-        },
+        answers: ["Franklin Delano Roosevelt", "Harry S. Truman", "Dwight D. Eisenhower"],
+        correctAnswers: 0
+    }
+];
 
-        correctAnswers: "a",
-    },
-    ];
+var questionNumber = $(this).attr('data-question');
+var currentQuestion = quizQuestions[questionNumber];
+var correctAnswerIndex = currentQuestion[correctAnswers];
+var correctAnswer = currentQuestion.answers[correctAnswerIndex];
+
+
 
 
 
