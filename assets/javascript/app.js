@@ -32,8 +32,8 @@ $(document).ready(function(){
     function displayAnswers(answers) {
         for(var i = 0; i < answers.length; i++) {
             var b = $('<button>');
-            b.attr('data-answers', answers[i]);
-            b.text(answers[i])
+            b.attr('data-answers',[i]);
+            b.text(answers[i]);
             b.appendTo('.answers-box')
         }
     }
@@ -52,11 +52,15 @@ $(document).ready(function(){
             var userGuess = $(this).attr('data-answers');
             console.log("what is "+userGuess);
         });
-
-
     }
    userSelection();
 
+   function gameLogic() {
+
+console.log("is this" +currentQuestion);
+   }
+
+   gameLogic();
 
 
 
