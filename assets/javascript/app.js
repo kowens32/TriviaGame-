@@ -23,9 +23,9 @@ var quizQuestions = [
 ];
 
 //Need to create a timer that counts down from 30 seconds and testing
-var number = 10;
+var number = 11;
 var intervalId;
-var correctAnswers = 0;
+var trueAnswers = 0;
 var incorrectAnswers = 0;
 var questionCounter = 0;
 
@@ -34,12 +34,14 @@ $(document).ready(function() {
 function runTimer () {
      number = 10;
     intervalId = setInterval(decrement, 1000);
+   $("#question-timer").html("<h2>" + number + ' seconds left'+ "</h2>");
 }
 runTimer();
 
     function decrement() {
-        number--;
-        $("#question-timer").html("<h2>" + number + ' seconds left'+ "</h2>");
+    number--;
+     $("#question-timer").html("<h2>" + number + ' seconds left'+ "</h2>");
+
         if (number === 0) {
             stopTimer();
             alert("Time Up!");
@@ -87,8 +89,9 @@ runTimer();
             console.log('user' + userGuess);
             if (userGuess == rightAnswer) {
                 alert('correct');
-
+                trueAnswers++;
                 console.log("1st test" + questionCounter);
+                console.log('is this correct'+trueAnswers);
             }
             else{
                 alert('wrong answer! correct answer is '+ rightAnswer);
@@ -106,15 +109,17 @@ runTimer();
 
             console.log("2nd test" +questionCounter);
         });
-        console.log("3rdd test" +questionCounter);
     }
-
 
     displayQuestion(quizQuestions[questionCounter].question, questionCounter);
     displayAnswers(quizQuestions[questionCounter].answers);
     userSelection();
     stopTimer();
     runTimer();
+
+
+
+
 
 
 
