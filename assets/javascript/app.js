@@ -35,21 +35,15 @@ $(document).ready(function() {
 
     function decrement() {
         number--;
-        $("#question-timer").html("<h2>" + number + "</h2>");
+        $("#question-timer").html("<h2>" + number + ' seconds left'+ "</h2>");
         if (number === 15) {
-            alert('15 seconds left!')
-
+            //alert('15 seconds left!')
         }
-
-
         if (number === 0) {
-
             stop();
-
             alert("Time Up!");
         }
     }
-
     decrement();
 
     function displayQuestion(question, index) {
