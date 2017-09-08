@@ -1,9 +1,12 @@
 #question-timer,
 .answers-box,
 .question-box {
-    border: solid pink;
+
+
 }
 
 body {
-    background-color: blue;
+    color: lightblue;
+    font-size: xx-large;
+    background-image:url("../images/bald-eagle-140793_1920.jpg") ;
 }
