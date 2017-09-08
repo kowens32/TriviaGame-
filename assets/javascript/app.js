@@ -2,7 +2,7 @@ var quizQuestions = [
     {
         question: "Which U.S. President invented the swivel chair?",
         answers: ["John Quincy Adams", "Abraham Lincoln", "Thomas Jefferson"],
-        correctAnswer: 2
+        correctAnswers: 2
     },
     {
         question: "Which U.S. President loved bowling so much that he put a bowling alley in the White House?",
@@ -27,6 +27,7 @@ var number = 31;
 var intervalId;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
+var questionCounter = 0;
 
 $(document).ready(function() {
 
@@ -36,7 +37,6 @@ $(document).ready(function() {
         number--;
         $("#question-timer").html("<h2>" + number + "</h2>");
         if (number === 0) {
-            // alert("Time up!");
         }
     }
 
@@ -57,31 +57,24 @@ $(document).ready(function() {
             b.appendTo('.answers-box')
         }
     }
+        displayQuestion(quizQuestions[questionCounter].question, questionCounter);
+        displayAnswers(quizQuestions[questionCounter].answers);
 
-    for (i = 0; i <quizQuestions.length; i++) {
-        var presentQuestion = [i];
-        console.log(presentQuestion);
-    }
-        displayQuestion(quizQuestions[presentQuestion].question, presentQuestion);
-        displayAnswers(quizQuestions[presentQuestion].answers);
-
-        // function correctSelection(){
-        //      bestAnswer = quizQuestions[presentQuestion].correctAnswers;
-        //     console.log('kjsdhfkjs' + bestAnswer);
-        // }
-        // correctSelection();
 
     function userSelection () {
         var userGuess;
+        console.log(questionCounter);
         $("button").on("click", function() {
-            var userGuess = $(this).attr('data-answers')
-            rightAnswer = quizQuestions[presentQuestion].correctAnswers
-            console.log('kjsdhfkjs' + bestAnswer);
+            userGuess = $(this).attr('data-answers')
+          var  rightAnswer = quizQuestions[questionCounter].correctAnswers
+            console.log('kjsdhfkjs' + rightAnswer);
             console.log('uyest' + userGuess);
-            if (userGuess = bestAnswer)
-                alert('ciewofhdj');
+            if (userGuess == rightAnswer) {
+                alert('correct');
+                questionCounter++;
+                console.log(questionCounter);
+            }
             });
-
     }
     userSelection();
 
