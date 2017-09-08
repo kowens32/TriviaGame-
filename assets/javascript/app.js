@@ -36,7 +36,9 @@ $(document).ready(function() {
     function decrement() {
         number--;
         $("#question-timer").html("<h2>" + number + "</h2>");
-        if (number === 0) {
+        if (number === 15) {
+            alert('15 seconds left!')
+
         }
     }
 
@@ -56,7 +58,7 @@ $(document).ready(function() {
             var b = $('<button>');
             b.attr('data-answers', [i]);
             b.text(answers[i]);
-             console.log(answers);
+            console.log(answers);
             b.appendTo('.answers-box')
         }
     }
@@ -67,7 +69,7 @@ $(document).ready(function() {
         console.log(questionCounter);
         $("button").on("click", function() {
             userGuess = $(this).attr('data-answers')
-          var  rightAnswer = quizQuestions[questionCounter].correctAnswers
+            var  rightAnswer = quizQuestions[questionCounter].correctAnswers
             console.log('computer' + rightAnswer);
             console.log('user' + userGuess);
             if (userGuess == rightAnswer) {
@@ -85,14 +87,17 @@ $(document).ready(function() {
             displayQuestion(quizQuestions[questionCounter].question, questionCounter);
             displayAnswers(quizQuestions[questionCounter].answers);
             userSelection();
-             console.log("2nd test" +questionCounter);
-            });
+
+            console.log("2nd test" +questionCounter);
+        });
         console.log("3rdd test" +questionCounter);
     }
+
 
     displayQuestion(quizQuestions[questionCounter].question, questionCounter);
     displayAnswers(quizQuestions[questionCounter].answers);
     userSelection();
+
 
 
 });
