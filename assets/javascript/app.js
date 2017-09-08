@@ -22,7 +22,7 @@ var quizQuestions = [
     }
 ];
 
-//Need to create a timer that counts down from 30 seconds
+//Need to create a timer that counts down from 30 seconds and testing
 var number = 10;
 var intervalId;
 var correctAnswers = 0;
