@@ -51,18 +51,16 @@ $(document).ready(function() {
     }
 
     function displayAnswers(answers) {
+        $('.answers-box').html('');
         for (var i = 0; i < answers.length; i++) {
             var b = $('<button>');
             b.attr('data-answers', [i]);
             b.text(answers[i]);
-            // $('.answers-box').html('');
              console.log(answers);
             b.appendTo('.answers-box')
         }
     }
-    // displayQuestion(quizQuestions[questionCounter].question, questionCounter);
-    // displayAnswers(quizQuestions[questionCounter].answers);
-    // console.log("are you keeping track" +questionCounter);
+
 
     function userSelection () {
         var userGuess;
@@ -74,19 +72,19 @@ $(document).ready(function() {
             console.log('user' + userGuess);
             if (userGuess == rightAnswer) {
                 alert('correct');
-                // questionCounter++;
+
                 console.log("1st test" + questionCounter);
-            }else{
+            }
+            else{
                 alert('wrong answer! correct answer is '+ rightAnswer);
 
                 incorrectAnswers++;
                 console.log(questionCounter,' ',incorrectAnswers);
-                // displayQuestion(quizQuestions[questionCounter].question, questionCounter);
-                // displayAnswers(quizQuestions[questionCounter].answers);
             }
             questionCounter++;
             displayQuestion(quizQuestions[questionCounter].question, questionCounter);
             displayAnswers(quizQuestions[questionCounter].answers);
+            userSelection();
              console.log("2nd test" +questionCounter);
             });
         console.log("3rdd test" +questionCounter);
