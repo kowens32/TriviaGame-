@@ -23,7 +23,7 @@ var quizQuestions = [
 ];
 
 //Need to create a timer that counts down from 30 seconds
-var number = 5;
+var number = 10;
 var intervalId;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
@@ -32,7 +32,7 @@ var questionCounter = 0;
 $(document).ready(function() {
 
 function runTimer () {
-     number = 5;
+     number = 10;
     intervalId = setInterval(decrement, 1000);
 }
 runTimer();
