@@ -100,6 +100,8 @@ runTimer();
             displayQuestion(quizQuestions[questionCounter].question, questionCounter);
             displayAnswers(quizQuestions[questionCounter].answers);
             userSelection();
+            stopTimer();
+            runTimer();
 
 
             console.log("2nd test" +questionCounter);
@@ -111,6 +113,8 @@ runTimer();
     displayQuestion(quizQuestions[questionCounter].question, questionCounter);
     displayAnswers(quizQuestions[questionCounter].answers);
     userSelection();
+    stopTimer();
+    runTimer();
 
 
 
