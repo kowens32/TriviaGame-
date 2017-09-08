@@ -23,7 +23,7 @@ var quizQuestions = [
 ];
 
 //Need to create a timer that counts down from 30 seconds
-var number = 31;
+var number = 5;
 var intervalId;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
@@ -31,20 +31,31 @@ var questionCounter = 0;
 
 $(document).ready(function() {
 
+function runTimer () {
+     number = 5;
     intervalId = setInterval(decrement, 1000);
+}
+runTimer();
 
     function decrement() {
         number--;
         $("#question-timer").html("<h2>" + number + ' seconds left'+ "</h2>");
-        if (number === 15) {
-            //alert('15 seconds left!')
-        }
         if (number === 0) {
-            stop();
+            stopTimer();
             alert("Time Up!");
+            questionCounter++;
+            displayQuestion(quizQuestions[questionCounter].question, questionCounter);
+            displayAnswers(quizQuestions[questionCounter].answers);
+            userSelection();
+            runTimer();
+            console.log('timer and '+questionCounter);
         }
     }
     decrement();
+
+    function stopTimer () {
+        clearInterval(intervalId);
+    }
 
     function displayQuestion(question, index) {
         var q = $('<h2>');
@@ -89,6 +100,7 @@ $(document).ready(function() {
             displayQuestion(quizQuestions[questionCounter].question, questionCounter);
             displayAnswers(quizQuestions[questionCounter].answers);
             userSelection();
+
 
             console.log("2nd test" +questionCounter);
         });
