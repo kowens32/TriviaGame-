@@ -82,24 +82,24 @@ runTimer();
     function userSelection () {
         var userGuess;
         console.log(questionCounter);
-        $("button").on("click", function() {
+        $("button").on("click", function () {
             userGuess = $(this).attr('data-answers')
-            var  rightAnswer = quizQuestions[questionCounter].correctAnswers
+            var rightAnswer = quizQuestions[questionCounter].correctAnswers
             console.log('computer' + rightAnswer);
             console.log('user' + userGuess);
             if (userGuess == rightAnswer) {
-            //    alert('correct');
+                //    alert('correct');
                 trueAnswers++;
-                $('.win').html('Correct Guesses '+trueAnswers);
+                $('.win').html('Correct Guesses ' + trueAnswers);
                 console.log("1st test" + questionCounter);
-                console.log('is this correct'+trueAnswers);
+                console.log('is this correct' + trueAnswers);
             }
-            else{
-             //   alert('wrong answer! correct answer is '+ rightAnswer);
+            else {
+                //   alert('wrong answer! correct answer is '+ rightAnswer);
 
                 incorrectAnswers++;
-                $('.loss').html('Incorrect Guesses '+incorrectAnswers);
-                console.log(questionCounter,' ',incorrectAnswers);
+                $('.loss').html('Incorrect Guesses ' + incorrectAnswers);
+                console.log(questionCounter, ' ', incorrectAnswers);
             }
             questionCounter++;
             displayQuestion(quizQuestions[questionCounter].question, questionCounter);
@@ -109,7 +109,7 @@ runTimer();
             runTimer();
 
 
-            console.log("2nd test" +questionCounter);
+            console.log("2nd test" + questionCounter);
         });
     }
 
