@@ -57,9 +57,9 @@ $(document).ready(function() {
             b.appendTo('.answers-box')
         }
     }
-        displayQuestion(quizQuestions[questionCounter].question, questionCounter);
-        displayAnswers(quizQuestions[questionCounter].answers);
-
+    displayQuestion(quizQuestions[questionCounter].question, questionCounter);
+    displayAnswers(quizQuestions[questionCounter].answers);
+    console.log("are you keeping track" +questionCounter);
 
     function userSelection () {
         var userGuess;
@@ -67,17 +67,19 @@ $(document).ready(function() {
         $("button").on("click", function() {
             userGuess = $(this).attr('data-answers')
           var  rightAnswer = quizQuestions[questionCounter].correctAnswers
-            console.log('kjsdhfkjs' + rightAnswer);
-            console.log('uyest' + userGuess);
+            console.log('computer' + rightAnswer);
+            console.log('user' + userGuess);
             if (userGuess == rightAnswer) {
                 alert('correct');
                 questionCounter++;
-                console.log(questionCounter);
+                console.log("1st test" +questionCounter);
+
             }
+             console.log("2nd test" +questionCounter);
             });
+
     }
     userSelection();
-
 });
 
 
