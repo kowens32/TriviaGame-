@@ -88,14 +88,14 @@ runTimer();
             console.log('computer' + rightAnswer);
             console.log('user' + userGuess);
             if (userGuess == rightAnswer) {
-                alert('correct');
+            //    alert('correct');
                 trueAnswers++;
                 $('.win').html('Correct Guesses '+trueAnswers);
                 console.log("1st test" + questionCounter);
                 console.log('is this correct'+trueAnswers);
             }
             else{
-                alert('wrong answer! correct answer is '+ rightAnswer);
+             //   alert('wrong answer! correct answer is '+ rightAnswer);
 
                 incorrectAnswers++;
                 $('.loss').html('Incorrect Guesses '+incorrectAnswers);
