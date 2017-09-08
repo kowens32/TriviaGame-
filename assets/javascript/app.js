@@ -90,6 +90,7 @@ runTimer();
             if (userGuess == rightAnswer) {
                 alert('correct');
                 trueAnswers++;
+                $('.win').html('Correct Guesses '+trueAnswers);
                 console.log("1st test" + questionCounter);
                 console.log('is this correct'+trueAnswers);
             }
@@ -97,6 +98,7 @@ runTimer();
                 alert('wrong answer! correct answer is '+ rightAnswer);
 
                 incorrectAnswers++;
+                $('.loss').html('Incorrect Guesses '+incorrectAnswers);
                 console.log(questionCounter,' ',incorrectAnswers);
             }
             questionCounter++;
@@ -116,6 +118,7 @@ runTimer();
     userSelection();
     stopTimer();
     runTimer();
+
 
 
 
