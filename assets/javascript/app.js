@@ -40,6 +40,14 @@ $(document).ready(function() {
             alert('15 seconds left!')
 
         }
+
+
+        if (number === 0) {
+
+            stop();
+
+            alert("Time Up!");
+        }
     }
 
     decrement();
