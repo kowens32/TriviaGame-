@@ -22,6 +22,8 @@ var quizQuestions = [
     }
 ];
 
+
+
 //Need to create a timer that counts down from 30 seconds and testing
 var number = 11;
 var intervalId;
@@ -30,6 +32,9 @@ var incorrectAnswers = 0;
 var questionCounter = 0;
 
 $(document).ready(function() {
+
+
+
 
 function runTimer () {
      number = 10;
