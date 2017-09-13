@@ -117,7 +117,16 @@ runTimer();
             console.log("2nd test" + questionCounter);
         });
     }
+function newGame() {
 
+
+    if (questionCounter > quizQuestions.length) {
+        questionCounter = 0;
+
+    }
+}
+
+    newGame();
     displayQuestion(quizQuestions[questionCounter].question, questionCounter);
     displayAnswers(quizQuestions[questionCounter].answers);
     userSelection();
